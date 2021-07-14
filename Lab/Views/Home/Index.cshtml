@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string[] TableHeaders = new string[] {" ProductID ", " ProductName ", " UnitPrice " };
+}
+}
+
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @{ 
+                        foreach(var head in TableHeaders) 
+                        { 
+                            @head
+                        }
+                    }
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>

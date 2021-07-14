@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@using Demo_Web.Models
+@model List<Product>
+
+
+    <!doctype html>
+    <html>
+    <head>
+        <title>Nam Đẹp Trai</title>
+
+    </head>
+    <body>
+
+        @*<select name="category">
+            @foreach (Category c in ViewBag.categories as List
+            <Category>
+                )
+                {
+                <option value="@c.Id">@c.Name</option>
+                }
+        </select>*@
+
+
+        @using(Html.BeginForm("List","Default",FormMethod.Post))
+        {
+        @Html.DropDownList("cat", null , new {onchange = "form.submit;"})
+        }
+
+        @foreach (var item in Model)
+        {
+        <div>
+            @item.Id - @item.Name
+        </div>
+        }
+    </body>
+</html>
